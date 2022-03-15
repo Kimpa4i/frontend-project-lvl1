@@ -3,3 +3,4 @@
 [![Actions Status](https://github.com/Kimpa4i/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Kimpa4i/frontend-project-lvl1/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 ![make lint](https://github.com/Kimpa4i/frontend-project-lvl1/actions/workflows/make-lint.yml/badge.svg)
+[![asciicast](https://asciinema.org/a/hwMvIB0PkU1GyH8AMMPA2rSJL.svg)](https://asciinema.org/a/hwMvIB0PkU1GyH8AMMPA2rSJL)
