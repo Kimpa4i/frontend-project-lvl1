@@ -20,10 +20,10 @@ function logic(num1, num2, operator) {
 }
 
 const questionAnswer = () => {
-  const arr = ['+', '-', '*'];
+  const arrOperator = ['+', '-', '*'];
   const randomNumOne = getRandomInRange(1, 100);
   const randomNumTwo = getRandomInRange(1, 100);
-  const randomOperator = arr[getRandomInRange(0, 2)];
+  const randomOperator = arrOperator[getRandomInRange(0, 2)];
   const question = `${randomNumOne} ${randomOperator} ${randomNumTwo}`;
   const correctAnswer = String(logic(randomNumOne, randomNumTwo, randomOperator));
   return [question, correctAnswer];
