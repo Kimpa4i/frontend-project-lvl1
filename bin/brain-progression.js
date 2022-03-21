@@ -5,16 +5,15 @@ import getRandomInRange from '../src/random.js';
 // Приветствие
 const rulesOfTheGame = 'What number is missing in the progression?';
 
-const logic = (x, y, z) => {
+const logic = (value, step, numOfHiddenNumber) => {
   const str = [];
   for (let i = 0; i < 10; i += 1) {
-    const prog = x + y;
+    const prog = value + step;
     str.push(prog);
-    // eslint-disable-next-line no-param-reassign
-    x += y;
+    value += step;
   }
-  const hiddenNumber = str[z];
-  str[z] = '..';
+  const hiddenNumber = str[numOfHiddenNumber];
+  str[numOfHiddenNumber] = '..';
   const arr = str.join(' ');
   return [arr, hiddenNumber];
 };
@@ -22,8 +21,8 @@ const logic = (x, y, z) => {
 const questionAnswer = () => {
   const value = getRandomInRange(1, 100);
   const step = getRandomInRange(1, 10);
-  const numOfArr = getRandomInRange(1, 10);
-  const [question, correctAnswer] = logic(value, step, numOfArr);
+  const numOfHiddenNumber = getRandomInRange(0, 9);
+  const [question, correctAnswer] = logic(value, step, numOfHiddenNumber);
   return [question, String(correctAnswer)];
 };
 
