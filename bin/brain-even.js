@@ -20,26 +20,24 @@ const logic = (num) => {
 
 const questionAnswer = () => {
   const randomNum = getRandomInRange(1, 100);
-  const answer = logic(randomNum);
-  return [randomNum, answer];
+  const correctAnswer = logic(randomNum);
+  const question = randomNum;
+  return [question, correctAnswer];
 };
 
 let count = 0;
 for (let i = 0; i < 3; i += 1) {
-  const [randomNum, answer] = questionAnswer();
+  const [question, correctAnswer] = questionAnswer();
 
   // Показать вопрос
-  const questionText = `Question:${randomNum}`;
-  const question = readlineSync.question(questionText);
+  console.log(`Question:${question}`);
+  const answer = readlineSync.question('Your answer: ');
 
-  // Получить ответ
-  console.log(`Your answer:${question}`);
-  // Проверка
-  if (answer === question) {
+  if (correctAnswer === answer) {
     console.log('Correct!');
     count += 1;
   } else {
-    console.log(`${question} is wrong answer ;(. Correct answer was ${answer}.`);
+    console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
     console.log(`Let's try again, ${userName}!`);
     break;
   }

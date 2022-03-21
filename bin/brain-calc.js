@@ -5,40 +5,46 @@ import getRandomInRange from '../src/random.js';
 console.log('Welcome to the Brain Games!');
 const userName = readlineSync.question('May I have your name?');
 console.log(`Hi ${userName}`);
-const questionOfGame = 'What is the result of the expression?';
-console.log(questionOfGame);
+const rulesOfTheGame = 'What is the result of the expression?';
+console.log(rulesOfTheGame);
 
 const arr = ['+', '-', '*'];
 let count = 0;
 
-for (let i = 0; i < 3; i += 1) {
+// eslint-disable-next-line consistent-return
+function logic(num1, num2, operator) {
+  switch (operator) {
+    case '*':
+      return num1 * num2;
+
+    case '+':
+      return num1 + num2;
+
+    case '-':
+      return num1 - num2;
+    default:
+  }
+}
+
+const questionAnswer = () => {
   const randomNumOne = getRandomInRange(1, 100);
   const randomNumTwo = getRandomInRange(1, 100);
   const randomOperator = arr[getRandomInRange(0, 2)];
-  const questionText = `Question:${randomNumOne} ${randomOperator} ${randomNumTwo}`;
-  const question = readlineSync.question(questionText);
-  console.log(`Your answer:${question}`);
+  const question = `${randomNumOne} ${randomOperator} ${randomNumTwo}`;
+  const correctAnswer = String(logic(randomNumOne, randomNumTwo, randomOperator));
+  return [question, correctAnswer];
+};
 
-  // eslint-disable-next-line consistent-return
-  const gameLogic = () => {
-    switch (randomOperator) {
-      case '*':
-        return randomNumOne * randomNumTwo;
+for (let i = 0; i < 3; i += 1) {
+  const [question, correctAnswer] = questionAnswer();
+  console.log(`Question:${question}`);
+  const answer = readlineSync.question('Your answer: ');
 
-      case '+':
-        return randomNumOne + randomNumTwo;
-
-      case '-':
-        return randomNumOne - randomNumTwo;
-      default:
-    }
-  };
-
-  if (gameLogic(randomOperator) === Number(question)) {
+  if (correctAnswer === (answer)) {
     console.log('Correct!');
     count += 1;
   } else {
-    console.log(`${question} is wrong answer ;(. Correct answer was ${gameLogic(randomOperator)}.`);
+    console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
     console.log(`Let's try again, ${userName}!`);
     break;
   }
