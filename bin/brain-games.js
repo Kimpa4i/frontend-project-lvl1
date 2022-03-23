@@ -1,3 +1,5 @@
 #!/usr/bin/env node
 
-import userName from '../src/cli.js';
+import brainGame from '../src/cli.js';
+
+brainGame();
