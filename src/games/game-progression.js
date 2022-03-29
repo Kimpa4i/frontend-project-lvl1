@@ -1,17 +1,11 @@
-import game from '../../src/index.js';
-import getRandomInRange from '../../src/random.js';
-
+import game from '../index.js';
+import getRandomInRange from '../random.js';
+import getProgression from '../progression.js';
 // Приветствие
 const ruleGame = 'What number is missing in the progression?';
 
-const logic = (value, step, numOfHiddenNumber) => {
-  const str = [];
-  let randomValueProgression = value;
-  for (let i = 0; i < 10; i += 1) {
-    const progression = randomValueProgression + step;
-    str.push(progression);
-    randomValueProgression += step;
-  }
+const calculateAnswer = (value, step, length, numOfHiddenNumber) => {
+  const str = getProgression(value, step, length);
   const hiddenNumber = str[numOfHiddenNumber];
   str[numOfHiddenNumber] = '..';
   const arr = str.join(' ');
@@ -21,8 +15,9 @@ const logic = (value, step, numOfHiddenNumber) => {
 const getGameData = () => {
   const value = getRandomInRange(1, 100);
   const step = getRandomInRange(1, 10);
+  const length = 10;
   const numOfHiddenNumber = getRandomInRange(0, 9);
-  const [question, correctAnswer] = logic(value, step, numOfHiddenNumber);
+  const [question, correctAnswer] = calculateAnswer(value, step, length, numOfHiddenNumber);
   return [question, String(correctAnswer)];
 };
 

@@ -3,7 +3,7 @@ import getRandomInRange from '../random.js';
 
 const ruleGame = 'What is the result of the expression?';
 
-const logic = (num1, num2, operator) => {
+const calculateAnswer = (num1, num2, operator) => {
   switch (operator) {
     case '*':
       return num1 * num2;
@@ -19,12 +19,12 @@ const logic = (num1, num2, operator) => {
 };
 
 const getGameData = () => {
-  const arrOperator = ['+', '-', '*'];
-  const randomNumOne = getRandomInRange(1, 100);
-  const randomNumTwo = getRandomInRange(1, 100);
-  const randomOperator = arrOperator[getRandomInRange(0, 2)];
-  const question = `${randomNumOne} ${randomOperator} ${randomNumTwo}`;
-  const correctAnswer = String(logic(randomNumOne, randomNumTwo, randomOperator));
+  const operators = ['+', '-', '*'];
+  const num1 = getRandomInRange(1, 100);
+  const num2 = getRandomInRange(1, 100);
+  const operator = operators[getRandomInRange(0, operators.length - 1)];
+  const question = `${num1} ${operator} ${num2}`;
+  const correctAnswer = String(calculateAnswer(num1, num2, operator));
   return [question, correctAnswer];
 };
 

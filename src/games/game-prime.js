@@ -1,10 +1,10 @@
-import game from '../../src/index.js';
-import getRandomInRange from '../../src/random.js';
+import game from '../index.js';
+import getRandomInRange from '../random.js';
 
 // Приветствие
 const ruleGame = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
-const logic = (number) => {
+const calculateAnswer = (number) => {
   if (number < 2) {
     return 'no';
   }
@@ -17,9 +17,9 @@ const logic = (number) => {
 };
 
 const getGameData = () => {
-  const randomNum = getRandomInRange(1, 100);
-  const correctAnswer = logic(randomNum);
-  const question = randomNum;
+  const num = getRandomInRange(1, 100);
+  const correctAnswer = calculateAnswer(num);
+  const question = num;
   return [question, correctAnswer];
 };
 

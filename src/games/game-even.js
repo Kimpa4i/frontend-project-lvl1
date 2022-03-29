@@ -1,19 +1,14 @@
-import game from '../../src/index.js';
-import getRandomInRange from '../../src/random.js';
+import game from '../index.js';
+import getRandomInRange from '../random.js';
 
 const ruleGame = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const logic = (num) => {
-  if (num % 2 === 0) {
-    return 'yes';
-  }
-  return 'no';
-};
+const calculateAnswer = (num) => (num % 2 === 0);
 
 const getGameData = () => {
-  const randomNum = getRandomInRange(1, 100);
-  const correctAnswer = logic(randomNum);
-  const question = randomNum;
+  const num = getRandomInRange(1, 100);
+  const correctAnswer = calculateAnswer(num) ? 'yes' : 'no';
+  const question = num;
   return [question, correctAnswer];
 };
 

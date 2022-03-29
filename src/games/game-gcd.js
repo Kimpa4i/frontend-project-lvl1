@@ -1,23 +1,23 @@
-import game from '../../src/index.js';
-import getRandomInRange from '../../src/random.js';
+import game from '../index.js';
+import getRandomInRange from '../random.js';
 
 const ruleGame = 'Find the greatest common divisor of given numbers.';
 
-const logic = (x, y) => {
+const calculateAnswer = (x, y) => {
   if (y > x) {
-    return logic(y, x);
+    return calculateAnswer(y, x);
   }
   if (!y) {
     return x;
   }
-  return logic(y, x % y);
+  return calculateAnswer(y, x % y);
 };
 
 const getGameData = () => {
-  const randomNumOne = getRandomInRange(1, 100);
-  const randomNumTwo = getRandomInRange(1, 100);
-  const correctAnswer = String(logic(randomNumOne, randomNumTwo));
-  const question = `${randomNumOne} ${randomNumTwo}`;
+  const num1 = getRandomInRange(1, 100);
+  const num2 = getRandomInRange(1, 100);
+  const correctAnswer = String(calculateAnswer(num1, num2));
+  const question = `${num1} ${num2}`;
   return [question, correctAnswer];
 };
 
