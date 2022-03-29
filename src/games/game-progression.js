@@ -18,7 +18,7 @@ const logic = (value, step, numOfHiddenNumber) => {
   return [arr, hiddenNumber];
 };
 
-const questionAnswer = () => {
+const getGameData = () => {
   const value = getRandomInRange(1, 100);
   const step = getRandomInRange(1, 10);
   const numOfHiddenNumber = getRandomInRange(0, 9);
@@ -26,5 +26,5 @@ const questionAnswer = () => {
   return [question, String(correctAnswer)];
 };
 
-const gameProgression = () => game(ruleGame, questionAnswer);
+const gameProgression = () => game(ruleGame, getGameData);
 export default gameProgression;

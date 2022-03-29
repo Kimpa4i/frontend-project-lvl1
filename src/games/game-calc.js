@@ -18,7 +18,7 @@ const logic = (num1, num2, operator) => {
   }
 };
 
-const questionAnswer = () => {
+const getGameData = () => {
   const arrOperator = ['+', '-', '*'];
   const randomNumOne = getRandomInRange(1, 100);
   const randomNumTwo = getRandomInRange(1, 100);
@@ -28,5 +28,5 @@ const questionAnswer = () => {
   return [question, correctAnswer];
 };
 
-const gameCalc = () => game(ruleGame, questionAnswer);
+const gameCalc = () => game(ruleGame, getGameData);
 export default gameCalc;

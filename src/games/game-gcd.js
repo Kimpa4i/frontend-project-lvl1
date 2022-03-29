@@ -13,7 +13,7 @@ const logic = (x, y) => {
   return logic(y, x % y);
 };
 
-const questionAnswer = () => {
+const getGameData = () => {
   const randomNumOne = getRandomInRange(1, 100);
   const randomNumTwo = getRandomInRange(1, 100);
   const correctAnswer = String(logic(randomNumOne, randomNumTwo));
@@ -21,5 +21,5 @@ const questionAnswer = () => {
   return [question, correctAnswer];
 };
 
-const gameGcd = () => game(ruleGame, questionAnswer);
+const gameGcd = () => game(ruleGame, getGameData);
 export default gameGcd;

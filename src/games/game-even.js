@@ -10,12 +10,12 @@ const logic = (num) => {
   return 'no';
 };
 
-const questionAnswer = () => {
+const getGameData = () => {
   const randomNum = getRandomInRange(1, 100);
   const correctAnswer = logic(randomNum);
   const question = randomNum;
   return [question, correctAnswer];
 };
 
-const gameEven = () => game(ruleGame, questionAnswer);
+const gameEven = () => game(ruleGame, getGameData);
 export default gameEven;

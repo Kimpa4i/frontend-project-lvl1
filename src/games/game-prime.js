@@ -16,12 +16,12 @@ const logic = (number) => {
   return 'yes';
 };
 
-const questionAnswer = () => {
+const getGameData = () => {
   const randomNum = getRandomInRange(1, 100);
   const correctAnswer = logic(randomNum);
   const question = randomNum;
   return [question, correctAnswer];
 };
 
-const gamePrime = () => game(ruleGame, questionAnswer);
+const gamePrime = () => game(ruleGame, getGameData);
 export default gamePrime;

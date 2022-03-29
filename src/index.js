@@ -1,13 +1,13 @@
 import readlineSync from 'readline-sync';
 
-const game = (ruleGame, questionAnswer) => {
+const game = (ruleGame, getGameData) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name?');
   console.log(`Hi ${userName}`);
   console.log(ruleGame);
   let count = 0;
   for (let i = 0; i < 3; i += 1) {
-    const [question, correctAnswer] = questionAnswer();
+    const [question, correctAnswer] = getGameData();
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
     if (correctAnswer === (answer)) {
