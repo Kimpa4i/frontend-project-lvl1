@@ -1,7 +1,7 @@
 import game from '../../src/index.js';
 import getRandomInRange from '../../src/random.js';
 
-const rulesOfTheGame = 'Find the greatest common divisor of given numbers.';
+const ruleGame = 'Find the greatest common divisor of given numbers.';
 
 const logic = (x, y) => {
   if (y > x) {
@@ -21,5 +21,5 @@ const questionAnswer = () => {
   return [question, correctAnswer];
 };
 
-const gameGcd = () => game(rulesOfTheGame, questionAnswer);
+const gameGcd = () => game(ruleGame, questionAnswer);
 export default gameGcd;

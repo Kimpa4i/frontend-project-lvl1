@@ -2,7 +2,7 @@ import game from '../../src/index.js';
 import getRandomInRange from '../../src/random.js';
 
 // Приветствие
-const rulesOfTheGame = 'What number is missing in the progression?';
+const ruleGame = 'What number is missing in the progression?';
 
 const logic = (value, step, numOfHiddenNumber) => {
   const str = [];
@@ -26,5 +26,5 @@ const questionAnswer = () => {
   return [question, String(correctAnswer)];
 };
 
-const gameProgression = () => game(rulesOfTheGame, questionAnswer);
+const gameProgression = () => game(ruleGame, questionAnswer);
 export default gameProgression;

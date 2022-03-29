@@ -1,7 +1,7 @@
 import game from '../../src/index.js';
 import getRandomInRange from '../../src/random.js';
 
-const rulesOfTheGame = 'Answer "yes" if the number is even, otherwise answer "no".';
+const ruleGame = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const logic = (num) => {
   if (num % 2 === 0) {
@@ -17,5 +17,5 @@ const questionAnswer = () => {
   return [question, correctAnswer];
 };
 
-const gameEven = () => game(rulesOfTheGame, questionAnswer);
+const gameEven = () => game(ruleGame, questionAnswer);
 export default gameEven;

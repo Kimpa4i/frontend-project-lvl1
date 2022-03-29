@@ -2,7 +2,7 @@ import game from '../../src/index.js';
 import getRandomInRange from '../../src/random.js';
 
 // Приветствие
-const rulesOfTheGame = 'Answer "yes" if given number is prime. Otherwise answer "no"';
+const ruleGame = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
 const logic = (number) => {
   if (number < 2) {
@@ -23,5 +23,5 @@ const questionAnswer = () => {
   return [question, correctAnswer];
 };
 
-const gamePrime = () => game(rulesOfTheGame, questionAnswer);
+const gamePrime = () => game(ruleGame, questionAnswer);
 export default gamePrime;

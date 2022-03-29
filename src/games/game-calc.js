@@ -1,7 +1,7 @@
-import game from '../../src/index.js';
-import getRandomInRange from '../../src/random.js';
+import game from '../index.js';
+import getRandomInRange from '../random.js';
 
-const rulesOfTheGame = 'What is the result of the expression?';
+const ruleGame = 'What is the result of the expression?';
 
 const logic = (num1, num2, operator) => {
   switch (operator) {
@@ -28,5 +28,5 @@ const questionAnswer = () => {
   return [question, correctAnswer];
 };
 
-const gameCalc = () => game(rulesOfTheGame, questionAnswer);
+const gameCalc = () => game(ruleGame, questionAnswer);
 export default gameCalc;
