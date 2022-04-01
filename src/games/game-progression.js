@@ -1,7 +1,7 @@
 import game from '../index.js';
 import getRandomRange from '../random.js';
 import getProgression from '../progression.js';
-// Приветствие
+
 const ruleGame = 'What number is missing in the progression?';
 
 const calculateAnswer = (value, step, length, numHiddenNumber) => {
